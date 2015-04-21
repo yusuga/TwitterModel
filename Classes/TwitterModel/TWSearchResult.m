@@ -11,7 +11,7 @@
 @implementation TWSearchResult
 {
     TWSearchMetadata *_search_metadata;
-    NSArray *_statuses;
+    NSArray *_statuseObjects;
 }
 - (TWSearchMetadata *)search_metadata
 {
@@ -23,12 +23,17 @@
 
 - (NSArray *)statuses
 {
-    if (!_statuses) {
-        _statuses = [self.dictionary[@"statuses"] tw_mappedArrayWithBlock:^id(id __nonnull obj) {
+    return self.dictionary[@"statuses"];
+}
+
+- (NSArray *)statuseObjects
+{
+    if (!_statuseObjects) {
+        _statuseObjects = [[self statuses] tw_mappedArrayWithBlock:^id(id __nonnull obj) {
             return [[TWTweet alloc] initWithDictionary:obj];
         }];
     }
-    return _statuses;
+    return _statuseObjects;
 }
 
 @end

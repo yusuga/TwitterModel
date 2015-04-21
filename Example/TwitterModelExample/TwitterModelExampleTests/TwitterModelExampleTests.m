@@ -45,9 +45,9 @@
     
     TWEntities *entities = tweet.entities;
     XCTAssertTrue([entities isKindOfClass:[TWEntities class]]);
-    XCTAssertTrue([entities.hashtags isKindOfClass:[NSArray class]]);
+    XCTAssertTrue([entities.hashtagObjects isKindOfClass:[NSArray class]]);
     
-    TWHashtag *hashtag = [entities.hashtags firstObject];
+    TWHashtag *hashtag = [entities.hashtagObjects firstObject];
     XCTAssertTrue([hashtag isKindOfClass:[TWHashtag class]]);
     XCTAssertGreaterThan(hashtag.text.length, 0);
 }

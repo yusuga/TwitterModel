@@ -14,7 +14,7 @@
     TWUser *_user;
     TWEntities *_entities;
     TWTweet *_retweeted_status;
-    NSArray *_contributors;
+    NSArray *_contributorObjects;
 }
 
 - (int64_t)id
@@ -163,13 +163,18 @@
 
 - (NSArray *)contributors
 {
-    if (!_contributors) {
-        NSArray *contributors = self.dictionary[@"contributors"];
-        _contributors = [contributors tw_mappedArrayWithBlock:^id(id __nonnull obj) {
+    return self.dictionary[@"contributors"];
+}
+
+- (NSArray *)contributorObjects
+{
+    if (!_contributorObjects) {
+        NSArray *contributors = [self contributors];
+        _contributorObjects = [contributors tw_mappedArrayWithBlock:^id(id __nonnull obj) {
             return [[TWContributor alloc] initWithDictionary:obj];
         }];
     }
-    return _contributors;
+    return _contributorObjects;
 }
 
 - (TWCoordinates *)coordinates

@@ -7,59 +7,72 @@
 
 #import "TWEntities.h"
 
-@interface TWEntities ()
-
-@property (nonatomic) NSArray *cachedHashtags;
-@property (nonatomic) NSArray *cachedMedia;
-@property (nonatomic) NSArray *cachedURLs;
-@property (nonatomic) NSArray *cachedUserMentions;
-
-@end
-
 @implementation TWEntities
+{
+    NSArray *_hashtagObjects;
+    NSArray *_mediaObjects;
+    NSArray *_urlObjects;
+    NSArray *_user_entionObjects;
+}
 
 - (NSArray *)hashtags
 {
-    if (!self.cachedHashtags) {
-        NSArray *hashtags = self.dictionary[@"hashtags"];
-        self.cachedHashtags = [hashtags tw_mappedArrayWithBlock:^id(id __nonnull obj) {
+    return self.dictionary[@"hashtags"];
+}
+
+- (NSArray *)hashtagObjects
+{
+    if (!_hashtagObjects) {
+        _hashtagObjects = [[self hashtags] tw_mappedArrayWithBlock:^id(id __nonnull obj) {
             return [[TWHashtag alloc] initWithDictionary:obj];
         }];
     }
-    return self.cachedHashtags;
+    return _hashtagObjects;
 }
 
 - (NSArray *)media
 {
-    if (!self.cachedMedia) {
-        NSArray *media = self.dictionary[@"media"];
-        self.cachedMedia = [media tw_mappedArrayWithBlock:^id(id __nonnull obj) {
+    return self.dictionary[@"media"];
+}
+
+- (NSArray *)mediaObjects
+{
+    if (!_mediaObjects) {
+        _mediaObjects = [[self media] tw_mappedArrayWithBlock:^id(id __nonnull obj) {
             return [[TWMedia alloc] initWithDictionary:obj];
         }];
     }
-    return self.cachedMedia;
+    return _mediaObjects;
 }
 
 - (NSArray *)urls
 {
-    if (!self.cachedURLs) {
-        NSArray *urls = self.dictionary[@"urls"];
-        self.cachedURLs = [urls tw_mappedArrayWithBlock:^id(id __nonnull obj) {
+    return self.dictionary[@"urls"];
+}
+
+- (NSArray *)urlObjects
+{
+    if (!_urlObjects) {
+        _urlObjects = [[self urls] tw_mappedArrayWithBlock:^id(id __nonnull obj) {
             return [[TWURL alloc] initWithDictionary:obj];
         }];
     }
-    return self.cachedURLs;
+    return _urlObjects;
 }
 
 - (NSArray *)user_mentions
 {
-    if (!self.cachedUserMentions) {
-        NSArray *mentions = self.dictionary[@"user_mentions"];
-        self.cachedUserMentions = [mentions tw_mappedArrayWithBlock:^id(id __nonnull obj) {
+    return self.dictionary[@"user_mentions"];
+}
+
+- (NSArray *)user_mentionObjects
+{
+    if (!_user_entionObjects) {
+        _user_entionObjects = [[self user_mentions] tw_mappedArrayWithBlock:^id(id __nonnull obj) {
             return [[TWUserMention alloc] initWithDictionary:obj];
         }];
     }
-    return self.cachedUserMentions;
+    return _user_entionObjects;
 }
 
 @end

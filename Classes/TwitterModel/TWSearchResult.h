@@ -16,7 +16,8 @@
 @interface TWSearchResult : TWObject
 
 - (TWSearchMetadata *)search_metadata;
-- (NSArray *)statuses;                  // Array of TWTweet
+- (NSArray *)statuses;                  // Array of Tweet dictionary
+- (NSArray *)statuseObjects;            // Array of TWTweet
 
 @end
 

@@ -44,34 +44,44 @@
 
 @implementation TWUsers
 {
-    NSArray *_users;
+    NSArray *_userObjects;
 }
 
 - (NSArray *)users
 {
-    if (!_users) {
-        _users = [self.dictionary[@"users"] tw_mappedArrayWithBlock:^id(id __nonnull obj) {
+    return self.dictionary[@"users"];
+}
+
+- (NSArray *)userObjects
+{
+    if (!_userObjects) {
+        _userObjects = [[self users] tw_mappedArrayWithBlock:^id(id __nonnull obj) {
             return [[TWUser alloc] initWithDictionary:obj];
         }];
     }
-    return _users;
+    return _userObjects;
 }
 
 @end
 
 @implementation TWLists
 {
-    NSArray *_lists;
+    NSArray *_listObjects;
 }
 
 - (NSArray *)lists
 {
-    if (!_lists) {
-        _lists = [self.dictionary[@"lists"] tw_mappedArrayWithBlock:^id(id __nonnull obj) {
+    return self.dictionary[@"lists"];
+}
+
+- (NSArray *)listObjects
+{
+    if (!_listObjects) {
+        _listObjects = [[self lists] tw_mappedArrayWithBlock:^id(id __nonnull obj) {
             return [[TWList alloc] initWithDictionary:obj];
         }];
     }
-    return _lists;
+    return _listObjects;
 }
 
 @end

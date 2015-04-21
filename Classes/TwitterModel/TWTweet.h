@@ -45,7 +45,8 @@
 - (NSString *)withheld_scope;
 
 - (id)annotations;
-- (NSArray *)contributors;                  // Collection of TWContributor
+- (NSArray *)contributors;                  // Collection of Contributor dicitonary
+- (NSArray *)contributorObjects;            // Collection of TWContributor
 - (TWCoordinates *)coordinates;
 - (TWScopes *)scopes;
 

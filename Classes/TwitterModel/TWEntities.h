@@ -13,10 +13,14 @@
  */
 @interface TWEntities : TWObject
 
-- (NSArray *)hashtags;      // Array of TWHashtag
-- (NSArray *)media;         // Array of TWMedia
-- (NSArray *)urls;          // Array of TWURL
-- (NSArray *)user_mentions; // Array of TWUserMention
+- (NSArray *)hashtags;              // Array of Hashtag dictionary
+- (NSArray *)hashtagObjects;        // Array of TWHashtag
+- (NSArray *)media;                 // Array of Media dictionary
+- (NSArray *)mediaObjects;          // Array of TWMedia
+- (NSArray *)urls;                  // Array of URL dictionary
+- (NSArray *)urlObjects;            // Array of TWURL
+- (NSArray *)user_mentions;         // Array of UserMention dictionary
+- (NSArray *)user_mentionObjects;   // Array of TWUserMention
 
 @end
 

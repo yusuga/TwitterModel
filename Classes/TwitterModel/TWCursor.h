@@ -56,7 +56,8 @@
  */
 @interface TWUsers : TWCursor
 
-- (NSArray *)users;     // Array of TWUser
+- (NSArray *)users;             // Array of User dictionary
+- (NSArray *)userObjects;       // Array of TWUser
 
 @end
 
@@ -77,6 +78,7 @@
  */
 @interface TWLists : TWCursor
 
-- (NSArray *)lists;     // Array of TWList
+- (NSArray *)lists;             // Array of TWList
+- (NSArray *)listObjects;       // Array of TWList
 
 @end
