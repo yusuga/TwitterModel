@@ -128,7 +128,7 @@
 
 - (BOOL)possibly_sensitive
 {
-    return self.dictionary[@"possibly_sensitive"];
+    return [self.dictionary[@"possibly_sensitive"] boolValue];
 }
 
 - (NSString *)source
@@ -138,12 +138,12 @@
 
 - (BOOL)truncated
 {
-    return self.dictionary[@"truncated"];
+    return [self.dictionary[@"truncated"] boolValue];;
 }
 
 - (BOOL)withheld_copyright
 {
-    return self.dictionary[@"withheld_copyright"];
+    return [self.dictionary[@"withheld_copyright"] boolValue];
 }
 
 - (NSArray *)withheld_in_countries
