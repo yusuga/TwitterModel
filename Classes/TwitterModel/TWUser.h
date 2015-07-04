@@ -9,6 +9,16 @@
 @class TWUserEntities, TWEntities, TWTweet;
 
 /**
+ *  https://dev.twitter.com/docs/user-profile-images-and-banners
+ */
+typedef NS_ENUM(NSInteger, TWUserProfileImageSizeType) {
+    TWUserProfileImageSizeTypeMini,
+    TWUserProfileImageSizeTypeNormal,
+    TWUserProfileImageSizeTypeBigger,
+    TWUserProfileImageSizeTypeOriginal,
+};
+
+/**
  *  Users
  *  https://dev.twitter.com/overview/api/users
  */
@@ -57,6 +67,8 @@
 - (BOOL)contributors_enabled;
 - (NSString *)withheld_in_countries;
 - (NSString *)withheld_scope;
+
+- (NSString *)profileImageURLStringForSizeType:(TWUserProfileImageSizeType)sizeType;
 
 @end
 

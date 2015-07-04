@@ -236,6 +236,47 @@
     return self.dictionary[@"withheld_scope"];
 }
 
+#pragma mark - Profile image
+
+- (NSString *)profileImageURLStringForSizeType:(TWUserProfileImageSizeType)sizeType;
+{
+    /**
+     *  Variant	Dimensions	Example URL
+     *  
+     *  mini	24px by 24px    http://pbs.twimg.com/profile_images/2284174872/7df3h38zabcvjylnyfe3_mini.png
+     *                          https://pbs.twimg.com/profile_images/2284174872/7df3h38zabcvjylnyfe3_mini.png
+     *  normal	48px by 48px    http://pbs.twimg.com/profile_images/2284174872/7df3h38zabcvjylnyfe3_normal.png
+     *                          https://pbs.twimg.com/profile_images/2284174872/7df3h38zabcvjylnyfe3_normal.png
+     *  bigger	73px by 73px    http://pbs.twimg.com/profile_images/2284174872/7df3h38zabcvjylnyfe3_bigger.png
+     *                          https://pbs.twimg.com/profile_images/2284174872/7df3h38zabcvjylnyfe3_bigger.png
+     *  original	original    http://pbs.twimg.com/profile_images/2284174872/7df3h38zabcvjylnyfe3.png
+     *                          https://pbs.twimg.com/profile_images/2284174872/7df3h38zabcvjylnyfe3.png
+     *  Omit the underscore and variant to retrieve the original image. The images can be very large.
+     */
+    
+    NSString *urlStr = [self profile_image_url_https];
+    if (urlStr.length == 0) return nil;
+    
+    NSString *replacedStr;
+    switch (sizeType) {
+        case TWUserProfileImageSizeTypeMini:
+            replacedStr = @"_mini.";
+            break;
+        case TWUserProfileImageSizeTypeNormal:
+            return urlStr;
+        case TWUserProfileImageSizeTypeBigger:
+            replacedStr = @"_bigger.";
+            break;
+        case TWUserProfileImageSizeTypeOriginal:
+            replacedStr = @".";
+            break;
+        default:
+            NSLog(@"[Unexpected branch] %s, sizeType = %zd", __func__, sizeType);
+            return urlStr;
+    }
+    return [urlStr stringByReplacingOccurrencesOfString:@"_normal." withString:replacedStr];
+}
+
 @end
 
 @implementation TWUserEntities
