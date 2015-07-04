@@ -32,7 +32,7 @@
  *      ]
  *  }
  */
-@interface TWIdentifiers : TWCursor
+@interface TWCursorIdentifiers : TWCursor
 
 - (NSArray *)ids;
 
@@ -54,7 +54,7 @@
  *      ]
  *  }
  */
-@interface TWUsers : TWCursor
+@interface TWCursorUsers : TWCursor
 
 - (NSArray *)users;             // Array of User dictionary
 - (NSArray *)userObjects;       // Array of TWUser
@@ -76,7 +76,7 @@
  *      ]
  *  }
  */
-@interface TWLists : TWCursor
+@interface TWCursorLists : TWCursor
 
 - (NSArray *)lists;             // Array of TWList
 - (NSArray *)listObjects;       // Array of TWList

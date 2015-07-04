@@ -33,7 +33,7 @@
 
 @end
 
-@implementation TWIdentifiers
+@implementation TWCursorIdentifiers
 
 - (NSArray *)ids
 {
@@ -42,7 +42,7 @@
 
 @end
 
-@implementation TWUsers
+@implementation TWCursorUsers
 {
     NSArray *_userObjects;
 }
@@ -64,7 +64,7 @@
 
 @end
 
-@implementation TWLists
+@implementation TWCursorLists
 {
     NSArray *_listObjects;
 }
