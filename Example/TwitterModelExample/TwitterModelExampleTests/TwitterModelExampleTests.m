@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
-#import "TWModels.h"
+#import "TwitterModel.h"
 
 @interface TwitterModelExampleTests : XCTestCase
 

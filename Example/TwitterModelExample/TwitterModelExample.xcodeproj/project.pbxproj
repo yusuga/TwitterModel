@@ -74,7 +74,7 @@
 		B83C200F1AE142A000F1EFA4 /* TWMappedTweets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWMappedTweets.m; sourceTree = "<group>"; };
 		B83C20101AE142A000F1EFA4 /* TWMediaUpload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWMediaUpload.h; sourceTree = "<group>"; };
 		B83C20111AE142A000F1EFA4 /* TWMediaUpload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWMediaUpload.m; sourceTree = "<group>"; };
-		B83C20121AE142A000F1EFA4 /* TWModels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWModels.h; sourceTree = "<group>"; };
+		B83C20121AE142A000F1EFA4 /* TwitterModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterModel.h; sourceTree = "<group>"; };
 		B83C20191AE142A000F1EFA4 /* TWObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWObject.h; sourceTree = "<group>"; };
 		B83C201A1AE142A000F1EFA4 /* TWObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWObject.m; sourceTree = "<group>"; };
 		B83C201D1AE142A000F1EFA4 /* TWProfileBanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWProfileBanner.h; sourceTree = "<group>"; };
@@ -186,7 +186,7 @@
 		B83C1FFD1AE142A000F1EFA4 /* TwitterModel */ = {
 			isa = PBXGroup;
 			children = (
-				B83C20121AE142A000F1EFA4 /* TWModels.h */,
+				B83C20121AE142A000F1EFA4 /* TwitterModel.h */,
 				B83C20191AE142A000F1EFA4 /* TWObject.h */,
 				B83C201A1AE142A000F1EFA4 /* TWObject.m */,
 				B83C20291AE142A000F1EFA4 /* TWTweet.h */,
