@@ -24,4 +24,6 @@
 - (NSUInteger)member_count;     // e.g. 643
 - (NSUInteger)subscriber_count; // e.g. 76779
 
+- (BOOL)isPrivate;
+
 @end

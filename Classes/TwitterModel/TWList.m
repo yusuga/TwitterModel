@@ -80,4 +80,11 @@
     return [self.dictionary[@"subscriber_count"] unsignedIntegerValue];
 }
 
+#pragma mark -
+
+- (BOOL)isPrivate
+{
+    return [self.mode isEqualToString:@"private"];
+}
+
 @end
