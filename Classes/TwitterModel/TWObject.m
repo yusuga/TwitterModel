@@ -26,7 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - NSCoding
 
-- (id)initWithCoder:(NSCoder *)aDecoder
+- (nullable instancetype)initWithCoder:(NSCoder *)aDecoder
 {
     if (self = [super init]) {
         _dictionary = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(dictionary))];
@@ -42,7 +42,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - NSCopying
 
-- (instancetype)copyWithZone:(NSZone *)zone
+- (nonnull instancetype)copyWithZone:(nullable NSZone *)zone
 {
     return [[[self class] allocWithZone:zone] initWithDictionary:self.dictionary];
 }
