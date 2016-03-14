@@ -6,7 +6,7 @@
 //
 
 #import "TWObject.h"
-@class TWUser, TWEntities, TWCoordinates, TWCurrentUserRetweet, TWPlace, TWPlaceAttributes, TWPlaceBoundingBox, TWScopes;
+@class TWUser, TWEntities, TWExtendedEntities, TWCoordinates, TWCurrentUserRetweet, TWPlace, TWPlaceAttributes, TWPlaceBoundingBox, TWScopes;
 
 /**
  *  GET statuses/home_timeline
@@ -23,6 +23,7 @@
 - (TWUser *)user;
 - (NSString *)text;
 - (TWEntities *)entities;
+- (TWExtendedEntities *)extended_entities;
 - (NSUInteger)favorite_count;
 - (BOOL)favorited;
 - (NSUInteger)retweet_count;
@@ -33,6 +34,7 @@
 - (NSString *)in_reply_to_screen_name;
 - (int64_t)in_reply_to_user_id;
 - (NSString *)in_reply_to_user_id_str;
+- (BOOL)is_quote_status;
 - (NSString *)lang;
 - (TWCurrentUserRetweet *)current_user_retweet;
 - (NSString *)filter_level;

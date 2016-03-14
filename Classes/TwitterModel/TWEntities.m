@@ -9,18 +9,18 @@
 
 @implementation TWEntities
 {
-    NSArray *_hashtagObjects;
-    NSArray *_mediaObjects;
-    NSArray *_urlObjects;
-    NSArray *_user_entionObjects;
+    NSArray<TWHashtag *> *_hashtagObjects;
+    NSArray<TWMedia *> *_mediaObjects;
+    NSArray<TWURL *> *_urlObjects;
+    NSArray<TWUserMention *> *_user_entionObjects;
 }
 
-- (NSArray *)hashtags
+- (NSArray<NSDictionary *> *)hashtags
 {
     return self.dictionary[@"hashtags"];
 }
 
-- (NSArray *)hashtagObjects
+- (NSArray<TWHashtag *> *)hashtagObjects
 {
     if (!_hashtagObjects) {
         _hashtagObjects = [[self hashtags] tw_mappedArrayWithBlock:^id(id __nonnull obj) {
@@ -30,12 +30,12 @@
     return _hashtagObjects;
 }
 
-- (NSArray *)media
+- (NSArray<NSDictionary *> *)media
 {
     return self.dictionary[@"media"];
 }
 
-- (NSArray *)mediaObjects
+- (NSArray<TWMedia *> *)mediaObjects
 {
     if (!_mediaObjects) {
         _mediaObjects = [[self media] tw_mappedArrayWithBlock:^id(id __nonnull obj) {
@@ -45,12 +45,12 @@
     return _mediaObjects;
 }
 
-- (NSArray *)urls
+- (NSArray<NSDictionary *> *)urls
 {
     return self.dictionary[@"urls"];
 }
 
-- (NSArray *)urlObjects
+- (NSArray<TWURL *> *)urlObjects
 {
     if (!_urlObjects) {
         _urlObjects = [[self urls] tw_mappedArrayWithBlock:^id(id __nonnull obj) {
@@ -60,12 +60,12 @@
     return _urlObjects;
 }
 
-- (NSArray *)user_mentions
+- (NSArray<NSDictionary *> *)user_mentions
 {
     return self.dictionary[@"user_mentions"];
 }
 
-- (NSArray *)user_mentionObjects
+- (NSArray<TWUserMention *> *)user_mentionObjects
 {
     if (!_user_entionObjects) {
         _user_entionObjects = [[self user_mentions] tw_mappedArrayWithBlock:^id(id __nonnull obj) {
@@ -73,6 +73,28 @@
         }];
     }
     return _user_entionObjects;
+}
+
+@end
+
+@implementation TWExtendedEntities
+{
+    NSArray<TWMedia *> *_mediaObjects;
+}
+
+- (NSArray<NSDictionary *> *)media
+{
+    return self.dictionary[@"media"];
+}
+
+- (NSArray<TWMedia *> *)mediaObjects
+{
+    if (!_mediaObjects) {
+        _mediaObjects = [[self media] tw_mappedArrayWithBlock:^id(id __nonnull obj) {
+            return [[TWMedia alloc] initWithDictionary:obj];
+        }];
+    }
+    return _mediaObjects;
 }
 
 @end

@@ -13,6 +13,7 @@
 {
     TWUser *_user;
     TWEntities *_entities;
+    TWExtendedEntities *_extended_entities;
     TWTweet *_retweeted_status;
     NSArray *_contributorObjects;
 }
@@ -51,6 +52,14 @@
         _entities = [[TWEntities alloc] initWithDictionary:self.dictionary[@"entities"]];
     }
     return _entities;
+}
+
+- (TWExtendedEntities *)extended_entities
+{
+    if (!_extended_entities) {
+        _extended_entities = [[TWExtendedEntities alloc] initWithDictionary:self.dictionary[@"extended_entities"]];
+    }
+    return _extended_entities;
 }
 
 - (NSUInteger)favorite_count
@@ -104,6 +113,11 @@
 - (NSString *)in_reply_to_user_id_str
 {
     return self.dictionary[@"in_reply_to_user_id_str"];
+}
+
+- (BOOL)is_quote_status
+{
+    return [self.dictionary[@"is_quote_status"] boolValue];
 }
 
 - (NSString *)lang

@@ -6,6 +6,7 @@
 //
 
 #import "TWObject.h"
+@class TWHashtag, TWMedia, TWURL, TWUserMention;
 
 /**
  *  Entities
@@ -13,14 +14,25 @@
  */
 @interface TWEntities : TWObject
 
-- (NSArray *)hashtags;              // Array of Hashtag dictionary
-- (NSArray *)hashtagObjects;        // Array of TWHashtag
-- (NSArray *)media;                 // Array of Media dictionary
-- (NSArray *)mediaObjects;          // Array of TWMedia
-- (NSArray *)urls;                  // Array of URL dictionary
-- (NSArray *)urlObjects;            // Array of TWURL
-- (NSArray *)user_mentions;         // Array of UserMention dictionary
-- (NSArray *)user_mentionObjects;   // Array of TWUserMention
+- (NSArray<NSDictionary *> *)hashtags;
+- (NSArray<TWHashtag *> *)hashtagObjects;
+- (NSArray<NSDictionary *> *)media;
+- (NSArray<TWMedia *> *)mediaObjects;
+- (NSArray<NSDictionary *> *)urls;
+- (NSArray<TWURL *> *)urlObjects;
+- (NSArray<NSDictionary *> *)user_mentions;
+- (NSArray<TWUserMention *> *)user_mentionObjects;
+
+@end
+
+/**
+ *  extended_entities
+ *  https://dev.twitter.com/overview/api/entities-in-twitter-objects#extended_entities
+ */
+@interface TWExtendedEntities : TWObject
+
+- (NSArray<NSDictionary *> *)media;
+- (NSArray<TWMedia *> *)mediaObjects;
 
 @end
 
