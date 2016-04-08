@@ -17,3 +17,4 @@
 #import "TWGeo.h"
 #import "TWSuggestion.h"
 #import "TWFriendships.h"
+#import "TWTrends.h"

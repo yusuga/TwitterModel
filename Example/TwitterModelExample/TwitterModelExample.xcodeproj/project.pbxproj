@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B82F6F9E1CB68855002E7980 /* TWTrends.m in Sources */ = {isa = PBXBuildFile; fileRef = B82F6F9D1CB68855002E7980 /* TWTrends.m */; };
 		B83C1FDA1AE1428700F1EFA4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B83C1FD91AE1428700F1EFA4 /* main.m */; };
 		B83C1FDD1AE1428700F1EFA4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B83C1FDC1AE1428700F1EFA4 /* AppDelegate.m */; };
 		B83C1FE01AE1428700F1EFA4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B83C1FDF1AE1428700F1EFA4 /* ViewController.m */; };
@@ -38,6 +39,8 @@
 		B83C206A1AE14F7400F1EFA4 /* users.json in Resources */ = {isa = PBXBuildFile; fileRef = B83C205E1AE14F7400F1EFA4 /* users.json */; };
 		B83C20731AE1543A00F1EFA4 /* TWEntities.m in Sources */ = {isa = PBXBuildFile; fileRef = B83C20721AE1543A00F1EFA4 /* TWEntities.m */; };
 		B85113ED1AE2037B00ECEEEA /* TWList.m in Sources */ = {isa = PBXBuildFile; fileRef = B85113EC1AE2037B00ECEEEA /* TWList.m */; };
+		B8FFF55E1CB786D20041989F /* trends_available.json in Resources */ = {isa = PBXBuildFile; fileRef = B8FFF55C1CB786D20041989F /* trends_available.json */; };
+		B8FFF55F1CB786D20041989F /* trends_place.json in Resources */ = {isa = PBXBuildFile; fileRef = B8FFF55D1CB786D20041989F /* trends_place.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B82F6F9C1CB68855002E7980 /* TWTrends.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWTrends.h; sourceTree = "<group>"; };
+		B82F6F9D1CB68855002E7980 /* TWTrends.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWTrends.m; sourceTree = "<group>"; };
 		B83C1FD41AE1428700F1EFA4 /* TwitterModelExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwitterModelExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B83C1FD81AE1428700F1EFA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B83C1FD91AE1428700F1EFA4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -102,6 +107,8 @@
 		B83C20721AE1543A00F1EFA4 /* TWEntities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWEntities.m; sourceTree = "<group>"; };
 		B85113EB1AE2037B00ECEEEA /* TWList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWList.h; sourceTree = "<group>"; };
 		B85113EC1AE2037B00ECEEEA /* TWList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWList.m; sourceTree = "<group>"; };
+		B8FFF55C1CB786D20041989F /* trends_available.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = trends_available.json; sourceTree = "<group>"; };
+		B8FFF55D1CB786D20041989F /* trends_place.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = trends_place.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +220,8 @@
 				B83C20281AE142A000F1EFA4 /* TWSuggestion.m */,
 				B83C20021AE142A000F1EFA4 /* TWFriendships.h */,
 				B83C20031AE142A000F1EFA4 /* TWFriendships.m */,
+				B82F6F9C1CB68855002E7980 /* TWTrends.h */,
+				B82F6F9D1CB68855002E7980 /* TWTrends.m */,
 			);
 			name = TwitterModel;
 			path = ../../Classes/TwitterModel;
@@ -230,6 +239,8 @@
 				B83C20591AE14F7400F1EFA4 /* search_tweets.json */,
 				B83C205A1AE14F7400F1EFA4 /* lookup_mapped.json */,
 				B83C205B1AE14F7400F1EFA4 /* suggested_users.json */,
+				B8FFF55C1CB786D20041989F /* trends_available.json */,
+				B8FFF55D1CB786D20041989F /* trends_place.json */,
 				B83C205C1AE14F7400F1EFA4 /* tweet.json */,
 				B83C205E1AE14F7400F1EFA4 /* users.json */,
 			);
@@ -329,7 +340,9 @@
 				B83C1FE81AE1428700F1EFA4 /* LaunchScreen.xib in Resources */,
 				B83C20681AE14F7400F1EFA4 /* tweet.json in Resources */,
 				B83C1FE51AE1428700F1EFA4 /* Images.xcassets in Resources */,
+				B8FFF55F1CB786D20041989F /* trends_place.json in Resources */,
 				B83C20651AE14F7400F1EFA4 /* search_tweets.json in Resources */,
+				B8FFF55E1CB786D20041989F /* trends_available.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,6 +366,7 @@
 				B83C20451AE142A000F1EFA4 /* TWUser.m in Sources */,
 				B83C1FDD1AE1428700F1EFA4 /* AppDelegate.m in Sources */,
 				B83C20311AE142A000F1EFA4 /* TWFriendships.m in Sources */,
+				B82F6F9E1CB68855002E7980 /* TWTrends.m in Sources */,
 				B83C20341AE142A000F1EFA4 /* TWGeo.m in Sources */,
 				B83C20731AE1543A00F1EFA4 /* TWEntities.m in Sources */,
 				B85113ED1AE2037B00ECEEEA /* TWList.m in Sources */,

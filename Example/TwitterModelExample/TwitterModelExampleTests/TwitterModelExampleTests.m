@@ -52,12 +52,23 @@
     XCTAssertGreaterThan(hashtag.text.length, 0);
 }
 
+- (void)testTrendsPlaceDate
+{
+    TWTrendsPlace *place = [[TWTrendsPlace placesWithTrendsPlaceValue:[self jsonObjectForResource:@"trends_place"]] firstObject];
+    XCTAssertNotNil(place);
+    
+    XCTAssertNotNil(place.asOfDateUTC);
+    NSLog(@"asOfDate: %@, %@", place.asOfDateUTC, place.asOfDateSystemTimeZone);
+    XCTAssertNotNil(place.createdAtDateUTC);
+    NSLog(@"createdAtDate: %@, %@", place.createdAtDateUTC, place.createdAtDateSystemTimeZone);
+}
+
 #pragma mark - Utility
 
 - (id)jsonObjectForResource:(NSString *)resource
 {
     NSError *error = nil;
-    id jsonObj = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"tweet" ofType:@"json"]]
+    id jsonObj = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:resource ofType:@"json"]]
                                                  options:0
                                                    error:&error];
     XCTAssertNil(error, @"resource = %@, error = %@", resource, error);
